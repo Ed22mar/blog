@@ -10,6 +10,9 @@ class PostController extends Controller
     //
     public function index(){
         $posts = Post::all();
-        return view('welcome');
+        return view('welcome', compact('posts'));
+    }
+    public function create(){
+        return view('post.create');
     }
 }

@@ -4,11 +4,42 @@
 
 
 <header class="">
-    <a href="" class="btn btn-light">Listar</a>
+    <a href="{{route('posts.create')}}" class="btn btn-light">Cadastrar</a>
     <a href="" class="btn btn-success">Cadastrar</a>
 </header>
 <main>
     <h1>Bem vindo ao meu blog</h1>
+
+<h1>Lista de Posts</h1>
+
+@if ($posts->isNotEmpty())
+
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Conteúdo</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($posts as $post)
+    <tr>
+      <td>{{ $post->title }}</td>
+      <td>{{ Str::limit($post->body, 50) }}</td>
+      <td>
+        <a href="" class="btn btn-info btn-sm">Ver</a>
+        <a href="" class="btn btn-primary btn-sm">Editar</a>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+
+@else
+    <p>Nenhum post foi encontrado.</p>
+@endif
 </main>
 
 
