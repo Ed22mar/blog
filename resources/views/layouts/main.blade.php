@@ -19,9 +19,16 @@
 
         </header>
         <main>
-
+            <div class="container-fluid">
+                <div class="row">
+                    @if (session('mensagem'))
+                        <p class="msg">{{session('mensagem')}}</p>
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
         </main>
-            @yield('content')
+
         <footer>
             <p> Blog &copy; 2025</p>
         </footer>
