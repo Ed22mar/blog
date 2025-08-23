@@ -13,7 +13,6 @@
                     <a href="/posts/{{ $post->id }}/edit" class="btn btn-success btn-sm">Editar</a>
                     <a href="{{ route('posts.index') }}" class="btn btn-primary btn-sm">Voltar</a>
                 </div>
-
             </div>
         </div>
     </div>

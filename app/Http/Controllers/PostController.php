@@ -41,4 +41,10 @@ class PostController extends Controller
 
         return redirect('/posts/'. $post->id)->with('mensagem','Actualizado com sucesso');
     }
+
+
+    public function dashboard(){
+        $posts = Post::all();
+        return view('post.dashboard',compact('posts'));
+    }
 }

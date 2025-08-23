@@ -15,9 +15,11 @@
         <link rel="stylesheet" href="/css/bootstrap-reboot.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <body>
-        <header>
-
-        </header>
+    <header class="">
+    <a href="/">Home</a>
+    <a href="{{route('posts.create')}}" class="btn btn-light">Cadastrar</a>
+    <a href="{{ route('post.dashboard') }}" class="btn btn-success">Listar Post</a>
+    </header>
         <main>
             <div class="container-fluid">
                 <div class="row">

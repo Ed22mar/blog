@@ -3,44 +3,24 @@
 @section('content')
 
 
-<header class="">
-    <a href="{{route('posts.create')}}" class="btn btn-light">Cadastrar</a>
-    <a href="" class="btn btn-success">Cadastrar</a>
-</header>
-<main>
     <h1>Bem vindo ao meu blog</h1>
-
-<h1>Lista de Posts</h1>
-
 @if ($posts->isNotEmpty())
-
-
-<table class="table table-striped table-bordered table-hover">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Título</th>
-      <th scope="col">Conteúdo</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
-  <tbody>
     @foreach ($posts as $post)
-    <tr>
-      <td>{{ $post->title }}</td>
-      <td>{{ Str::limit($post->body, 50) }}</td>
-      <td>
-        <a href="/posts/{{ $post->id }}" class="btn btn-info btn-sm">Ver</a>
-        <a href="" class="btn btn-primary btn-sm">Editar</a>
-      </td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
+    <div class="col-md-3 offset-md-1">
+        <div class="row">
+            <div id="info-container" class="col-md-6">
+                <div class="card-body">
+                    <h2 class="card-title">{{ $post->title}}</h2>
+                    <p class="card-participantes">{{ $post->body }}</p>
+                    <p class="card-date">Actualizado: {{date('d/m/Y', strtotime($post->updated_at))}}</p>
+                    <a href="/posts/{{ $post->id }}" class="btn btn-info btn-sm">Ver</a>
+                </div>
+            </div>
 
+        </div>
+    </div>
+    @endforeach
 @else
     <p>Nenhum post foi encontrado.</p>
 @endif
-</main>
-
-
 @endsection

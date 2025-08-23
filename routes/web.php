@@ -9,3 +9,5 @@ Route::post('/posts',[PostController::class,'store'])->name('posts.store');
 Route::get('/posts/{post}',[PostController::class,'show'])->name('posts.show');
 Route::get('/posts/{post}/edit',[PostController::class,'edit'])->name('posts.edit');
 Route::put('/posts/{post}/update',[PostController::class,'update'])->name('posts.update');
+
+Route::get('/Posts/dashboard',[PostController::class,'dashboard'])->name('post.dashboard');
