@@ -27,4 +27,18 @@ class PostController extends Controller
     public function show(Post $post){
         return view('post.show',compact('post'));
     }
+
+    public function edit(Post $post){
+        return view('post.edit',compact('post'));
+    }
+
+    public function update(Request $request, Post $post){
+        $validateDate = $request->validate([
+            'title'=>'required|max:255',
+            'body'=>'required',
+        ]);
+        $post->update($validateDate);
+
+        return redirect('/posts/'. $post->id)->with('mensagem','Actualizado com sucesso');
+    }
 }
