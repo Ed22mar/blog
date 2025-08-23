@@ -10,7 +10,6 @@
                     <h2 class="card-title">{{ $post->title}}</h2>
                     <p class="card-participantes">{{ $post->body }}</p>
                     <p class="card-date">Actualizado: {{date('d/m/Y', strtotime($post->updated_at))}}</p>
-                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-success btn-sm">Editar</a>
                     <a href="{{ route('posts.index') }}" class="btn btn-primary btn-sm">Voltar</a>
                 </div>
             </div>

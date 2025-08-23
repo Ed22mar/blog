@@ -42,7 +42,10 @@ class PostController extends Controller
         return redirect('/posts/'. $post->id)->with('mensagem','Actualizado com sucesso');
     }
 
-
+    public function destroy(Post $post){
+        $post->delete();
+        return redirect('/dashboard')->with('mensagem','Apagado com sucesso');
+    }
     public function dashboard(){
         $posts = Post::all();
         return view('post.dashboard',compact('posts'));

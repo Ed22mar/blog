@@ -20,7 +20,14 @@
       <td>{{ Str::limit($post->body, 50) }}</td>
       <td>
         <a href="/posts/{{ $post->id }}" class="btn btn-info btn-sm">Ver</a>
-        <a href="" class="btn btn-primary btn-sm">Editar</a>
+        <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary btn-sm">Editar</a>
+      </td>
+      <td>
+            <form action="/posts/{{ $post->id }}" method="post">
+            @csrf
+            @method("DELETE")
+                <button type="submit" class="btn btn-danger delete-btn">Apagar</button>
+        </form>
       </td>
     </tr>
     @endforeach
