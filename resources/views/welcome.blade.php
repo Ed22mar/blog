@@ -29,7 +29,7 @@
       <td>{{ $post->title }}</td>
       <td>{{ Str::limit($post->body, 50) }}</td>
       <td>
-        <a href="" class="btn btn-info btn-sm">Ver</a>
+        <a href="/posts/{{ $post->id }}" class="btn btn-info btn-sm">Ver</a>
         <a href="" class="btn btn-primary btn-sm">Editar</a>
       </td>
     </tr>

@@ -22,6 +22,9 @@ class PostController extends Controller
         ]);
         Post::create($validateDate);
 
-        return redirect('/')->with('mensagem','Postagem criado com sucesso!');
+        return redirect('/')->with('mensagem','Postagem criada com sucesso!');
+    }
+    public function show(Post $post){
+        return view('post.show',compact('post'));
     }
 }
